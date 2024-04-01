@@ -1,0 +1,16 @@
+* {
+ background: rgb(137, 226, 229);
+ align-content: center;
+ 
+
+}
+
+button {
+    color: blanchedalmond;
+    background: rgb(48, 44, 43);
+    margin-top: 5px;
+}
+button :hover {
+    color: black;
+    background: silver;
+}
