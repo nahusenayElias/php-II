@@ -1,5 +1,5 @@
-<?php
-
+<?php 
+$user = $password = "";
 if(isset($_POST['submit'])) {  echo "yes, we received data";
     $user =$_POST ['username'];
     $pass =$_POST ['password'];
@@ -61,6 +61,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 
 <form action="login.php" method="post">
+    
     <label for="username">Username</label><br>
     <input type="text" name="username">
     <label for="password">Password</label><br>

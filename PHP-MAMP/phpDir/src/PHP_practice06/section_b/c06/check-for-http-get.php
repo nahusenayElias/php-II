@@ -24,7 +24,7 @@ $sent = $_GET['sent'] ?? "" ;
 if($sent == 'search') {
 $term = $_GET['term'] ?? "";
 echo 'You searched for ' . htmlspecialchars($term);
- }else {
+ } else {
  ?>
  <form action="check-for-http-get.php" method="GET" > 
  Search for: <input type="search" name="term"> 

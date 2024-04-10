@@ -37,4 +37,12 @@ With post method all the necessay information is secured.
 Free online websites that can host websites projects:
 Front-End: vercel, netlify and u16p.
 Back-End: infinityfree.com, freehostia
+
 ```
+
+## Full Stack App Overiew
+
+- react, PHP, MySql, PhpMyAdmin
+
+
+React (Creating form using Axios. We then use POST and GET to interact with PHP. We 'Insert' data to DB.. Then 'Select' to retrieve.)

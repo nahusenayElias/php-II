@@ -39,7 +39,7 @@ if ($a > $b) {
 
 
 for ($i = 0; $i <= 10; $i++) {
-    echo "3<br>";
+    echo $i ."<br>";
 }
 
 

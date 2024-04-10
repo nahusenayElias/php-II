@@ -1,38 +1,41 @@
 <?php include 'db.php';
-
+ 
 $query = "SELECT * FROM users";
 $result = mysqli_query($conn, $query);
 if (!$result) {
-  die('Query failed');
+    die('Query failed');
 }
-?>
-
-<?php
+ 
 if (isset($_POST['submit'])) {
   $username = $_POST['username'];
   $password = $_POST['password'];
   $id = $_POST['id'];
-
-  $query = "DELETE FROM users ";
-  $query = "WHERE id= $id"; 
-
-
-
-  //Delete the records in db
-  $query = "DELETE FROM Users ";
-  $query .= "WHERE id = $id";
-  //OR
-  // $query = "DELETE FROM Users WHERE id = $id";
-
-  $result = mysqli_query($conn, $query);
-  if (!$result) {
-    die("Delete query failed" . mysqli_error($conn));
+ 
+  //Delete records from db.
+$stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
+ 
+$stmt->bind_param("i",$id);
+   if (!$stmt->execute()) {
+  die("Delete query failed" . $stmt->error);
+  } else {
+    echo "Record deleted!";
   }
-}
+ 
+// $stmt->bind_param("i",$id);
+//   if ($stmt->execute()) {
+//   header("Location: " .$_SERVER["PHP_SELF"]);
 
-
-
+// } else {
+//   die("Query insertion failed");
+// }
+ $stmt->close();
+ $conn->close();
+    
+ }
+ 
+ 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

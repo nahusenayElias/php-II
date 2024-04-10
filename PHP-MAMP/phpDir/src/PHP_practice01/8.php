@@ -26,7 +26,7 @@
 		Step 4 - echo the variable
 
 	*/
-	
+	 
 	?>
 
 

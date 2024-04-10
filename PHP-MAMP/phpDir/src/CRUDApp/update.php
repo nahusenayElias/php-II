@@ -1,31 +1,54 @@
-<?php include 'db.php';
+<?php include 'db.php'; 
+
+// header("Location: ");
+// header('Location: '.$_SERVER['PHP_SELF']);
+// die;
 
 $query = "SELECT * FROM users";
 $result = mysqli_query($conn, $query);
 if (!$result) {
   die('Query failed');
 }
-?>
-
-<?php
+ 
 if (isset($_POST['submit'])) {
   $username = $_POST['username'];
   $password = $_POST['password'];
   $id = $_POST['id'];
 
-  //Update the records in db
-  $query = "UPDATE users SET ";
-  $query .= "username = '$username', ";
-  $query .= "password = '$password' ";
-  $query .= "WHERE id = $id";
+//prepare an update with placeholders. 
+$stmt = $conn->prepare("UPDATE users SET username = ?, password = ? WHERE id = ?");
 
-  $result = mysqli_query($conn, $query);
-  if (!$result) {
-    die("Update query failed" . mysqli_error($conn));
-  }
+if ($stmt === false) {
+  die("Prepare fialed: " . $conn->error);
 }
 
-?>
+//bind variables to prepared statement as strings and integer.
+$stmt->bind_param("ssi", $username, $password, $id);
+
+//execute the prepared statemnt and check the result.
+if ($stmt->execute()) {
+  //redirect to the same page to prevent form subission.
+   header('Location: ' . $_SERVER['PHP_SELF']);
+}
+
+//   //Update the records in db
+//   $query = "UPDATE users SET ";
+//   $query .= "username = '$username', ";
+//   $query .= "password = '$password' ";
+//   $query .= "WHERE id = $id";
+
+//   $result = mysqli_query($conn, $query);
+//   if (!$result) {
+//     die("Update query failed" . mysqli_error($conn));
+//   }
+//   else { 
+//     header('Location: ' . $_SERVER['PHP_SELF']);
+//     exit;
+// }
+
+}
+
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,10 +63,14 @@ if (isset($_POST['submit'])) {
 <body>
   <form action="update.php" method="post">
 
-    <label for="username"> Username </label>
+    <p>
+    <label for="username"> Username: </label>
     <input type="text" name="username">
-    <label for="password"> Password </label>
+    </p>
+    <p>
+    <label for="password"> Password: </label>
     <input type="password" name="password">
+    </p>
     <select name="id" id="">
       <?php
       while ($row = mysqli_fetch_assoc($result)) {

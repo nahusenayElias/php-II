@@ -34,12 +34,12 @@
 			 $number2 = 20;
 
 			 // 2. Sum with echo
-			 echo 'addition: '.  $number1 + $number2."\n";
+			 echo 'addition: '.  $number1 + $number2."<br>";
 
 			 //Regular array
 
 			$data = array("Daniel", "ESR", 23.7);
-			echo $data[0];
+			echo $data[0] . "<br>";
 
 			// Associative array
 			$data = array("first"=>"Daniel", "last"=>"ESR", "age" => 23.7);

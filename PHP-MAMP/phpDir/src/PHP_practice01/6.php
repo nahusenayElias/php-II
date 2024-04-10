@@ -13,15 +13,7 @@
 
   <article class="main-content col-xs-8">
 
-
-
-  <form action="text" method="POST">
- <input type="text" name= "fname">
- <input type="submit" value="Submit">
- </form>
-
-
-    <?php
+<?php
 
 		/*  Step1: Make a form that submits one value to POST super global
 
@@ -29,11 +21,17 @@
  */
 
 
- $name = $_POST["fname"];
- echo $name;
+ if(isset($_POST['submit'])) {
+  $email = $_POST['email'] ?? "";
+  echo $email;
+ }
 
 
-		?>
+?>
+<form action="7.php" method="POST">
+ <input type="text" name= "fname">
+ <input type="submit" value="Submit">
+ </form>
 
 
   </article>

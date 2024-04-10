@@ -31,20 +31,26 @@ Step 6: Call the method ShowAll
 
 		
 	*/
+
+  //Define a class 
    class Dog {
+
+    //Properties
     public $eyeColor = "brown";
     public $breed = "Gold_retriever";
     public $furColor = "white";
 
-    //Methods
+    //Constructor Method
   public function __construct($eyeColor, $breed, $furColor) {
     $this->eyeColor = "brown";
 
     $this->breed = "Gold_retriever";
-    $this->furColor = "white";
-     
-    
+    $this->furColor = "white"; 
   } 
+  // method to bark
+  public function bark() {
+    return "Woof!... Woof!";
+  }
   public function showAll()
   {
     echo "Eye color: $this->eyeColor, Breed: $this->breed, Fur colour: $this->furColor";
@@ -54,11 +60,13 @@ Step 6: Call the method ShowAll
 
    }
    $pitbull = new Dog ("black", "gold_retriever", "white");
-   $pitbull->showAll();
 ;
 
+// // $pitbull->showAll();
 
+echo $pitbull->bark() ."<br>";
 
+echo $pitbull->showAll();
   
   
 

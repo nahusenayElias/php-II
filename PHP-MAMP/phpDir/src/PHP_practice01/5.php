@@ -17,10 +17,12 @@
 
 
 /* Step1: Use a pre-built math function here and echo it. */
-$str = "abcdefg";
+$str = 'abcdefg';
 echo strlen($str);
 $sentence = "The quick brown fox jump over the lazy Dog!";
 $sentence = strtoupper($sentence);
+echo "<br>";
+
 echo $sentence;
 
 

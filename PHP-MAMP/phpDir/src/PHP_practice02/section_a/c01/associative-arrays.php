@@ -24,9 +24,9 @@
 <body>
   <h1>The Candy Store</h1>
   <h2>Nutrition (per 100g)</h2>
-  <h2><?php echo $nutrition['sugar']; ?></h2>
-  <h2><?php echo $nutrition['fat']; ?></h2>
-  <h2><?php echo $nutrition['salt']; ?></h2>
+  <h2>Sugar: <?php echo $nutrition['sugar']; ?></h2>
+  <h2>Fat: <?php echo $nutrition['fat']; ?></h2>
+  <h2>Salt: <?php echo $nutrition['salt']; ?></h2>
 
 </body>
 
