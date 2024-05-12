@@ -29,7 +29,6 @@ $result = sum(1, 3);
         <th>two</th>
         <th>three</th>
        </tr>
-       ecHo "jhksadf";
     
 </body>
 </html>

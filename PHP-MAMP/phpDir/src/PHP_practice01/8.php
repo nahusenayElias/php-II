@@ -26,7 +26,14 @@
 		Step 4 - echo the variable
 
 	*/
-	 
+
+	$password = "Some abcde passwords";
+	$salt = 'itcanbeanything';
+	$encrypted_text = crypt($password, $salt);
+
+	echo 'first text' . $password . "<br>";
+	echo 'second text' . $encrypted_text;
+
 	?>
 
 

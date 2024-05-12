@@ -46,3 +46,15 @@ Back-End: infinityfree.com, freehostia
 
 
 React (Creating form using Axios. We then use POST and GET to interact with PHP. We 'Insert' data to DB.. Then 'Select' to retrieve.)
+
+
+//Unelema.io
+
+
+shorten the link
+then, get api (post or get) would be enough.
+go to setting and get access token and click the button to authorize. Once your loged in don't log out. 
+
+then you get the link, 
+
+**guzzle** 

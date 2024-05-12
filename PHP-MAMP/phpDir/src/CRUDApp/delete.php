@@ -62,7 +62,7 @@ $stmt->bind_param("i",$id);
       }
       ?>
     </select>
-    <input type="submit" name="submit" value="Delete">
+    <input type="submit" name="submit" value="DELETE">
 
   </form>
 
